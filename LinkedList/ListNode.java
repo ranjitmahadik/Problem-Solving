@@ -53,6 +53,21 @@ public class ListNode {
         return root;
     }
 
+    public static ListNode getTestCase() {
+        ListNode root = new ListNode(9);
+        root.next = new ListNode(9);
+        root.next.next = new ListNode(9);
+        root.next.next.next = new ListNode(9);
+        root.next.next.next.next = new ListNode(9);
+        return root;
+    }
+
+    public static ListNode getTestCase2(){
+        ListNode root = new ListNode(9);
+        root.next = new ListNode(9);
+        return root;
+    }
+
     @Override
     public String toString() {
         return "ListNode{" +
