@@ -34,11 +34,16 @@ public class ReverseLinkedList {
         ListNode.showNodes(prev);
     }
 
+
+
+
     public static void main(String[] args) {
-        ListNode root = ListNode.getList();
-        ListNode.showNodes(root);
-//        reverseList(root, null);
-//        ListNode.showNodes(revMainPointer);
-        iterativeReverseList(root);
+//        ListNode root = ListNode.getList();
+//        ListNode.showNodes(root);
+////        reverseList(root, null);
+////        ListNode.showNodes(revMainPointer);
+//        iterativeReverseList(root);
+
+
     }
 }

@@ -8,6 +8,15 @@ public class ListNode {
         this.val = val;
     }
 
+    public static ListNode getPalindromeList() {
+        ListNode root = new ListNode(1);
+        root.next = new ListNode(2);
+        root.next.next = new ListNode(3);
+        root.next.next.next = new ListNode(2);
+        root.next.next.next.next = new ListNode(1);
+        return root;
+    }
+
     public static ListNode getList() {
         ListNode root = new ListNode(1);
         root.next = new ListNode(2);
@@ -62,7 +71,7 @@ public class ListNode {
         return root;
     }
 
-    public static ListNode getTestCase2(){
+    public static ListNode getTestCase2() {
         ListNode root = new ListNode(9);
         root.next = new ListNode(9);
         return root;
