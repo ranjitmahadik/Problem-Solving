@@ -25,6 +25,17 @@ public class CountSubsetsWithGivenDiff {
     }
 
 
+    private static int countSubsetWithGivenDifference(int[] arr, int runningSum, int targetDiff, int idx) {
+        if (idx <= 0) {
+            return runningSum == targetDiff ? 1 : 0;
+        }
+
+        int addItem = countSubsetWithGivenDifference(arr, runningSum + arr[idx - 1], targetDiff, idx - 1);
+        int minusItem = countSubsetWithGivenDifference(arr, runningSum - arr[idx - 1], targetDiff, idx - 1);
+        return addItem + minusItem;
+    }
+
+
     public static void main(String[] args) {
         int[] arr = {1, 1, 2, 3};
         int requiredDiff = 1;
