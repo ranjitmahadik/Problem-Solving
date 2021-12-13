@@ -1,4 +1,4 @@
-package DynamicProgramming.Misc;
+package DynamicProgramming.LIS;
 
 import java.util.Arrays;
 
