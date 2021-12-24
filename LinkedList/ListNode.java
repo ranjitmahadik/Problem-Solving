@@ -53,6 +53,15 @@ public class ListNode {
         return root;
     }
 
+    public static ListNode getUnsortedList() {
+        ListNode root = new ListNode(5);
+        root.next = new ListNode(6);
+        root.next.next = new ListNode(7);
+        root.next.next.next = new ListNode(1);
+        root.next.next.next.next = new ListNode(2);
+        return root;
+    }
+
     public static ListNode getInstance() {
         ListNode root = new ListNode(8);
         root.next = new ListNode(15);
