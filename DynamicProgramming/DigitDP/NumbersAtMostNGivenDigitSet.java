@@ -27,9 +27,8 @@ public class NumbersAtMostNGivenDigitSet {
     }
 
     /**
-     *  refer digit dp concept if don't understand.
-     *
-     * */
+     * refer digit dp concept if don't understand.
+     */
     private static int countNumbers(String[] digits, String a, int pos, boolean isRestricted, int z) {
         if (pos >= a.length()) return 1;
 
@@ -47,6 +46,26 @@ public class NumbersAtMostNGivenDigitSet {
         return count;
     }
 
+    private static int countNumbersDigitDp(String[] digits, String limit, int currPos, int isTight, int startZero) {
+        if (currPos >= limit.length()) return 1;
+
+        int count = 0;
+        int upperLimit = isTight == 1 ? limit.charAt(currPos) - '0' : 9;
+        for (int i = 0; i < digits.length; i++) {
+            int currDigit = digits[i].charAt(0) - '0';
+            if (currDigit > upperLimit) continue;
+
+            int newTight = isTight == 1 && currDigit == upperLimit ? 1 : 0;
+            count += countNumbersDigitDp(digits, limit, currPos + 1, newTight, 0);
+        }
+
+        if (startZero == 0) {
+            //append only zero's at the beginning
+            count += countNumbersDigitDp(digits, limit, currPos + 1, 0, 1);
+        }
+
+        return count;
+    }
 
 
     public static void main(String[] args) {

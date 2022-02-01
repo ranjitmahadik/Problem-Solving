@@ -34,8 +34,8 @@ public class LongestSubstringWithKUniqueChars {
     }
 
     public static void main(String[] args) {
-        String s = "aabacbebebe";   //ans = "cbebebe" = 7;
-        int k = 3;
+        String s = "abc";   //ans = "cbebebe" = 7;
+        int k = 2;
         longestSubstringWithKUniqueChars(s, k);
     }
 }

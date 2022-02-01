@@ -7,12 +7,7 @@ public class FrequenciesofLimitedRangeArrayElements {
     private static void countElementFrequencies(int[] arr) {
         HashMap<Integer, Integer> count = new HashMap<>();
         for (int i : arr) {
-            if (count.containsKey(i)) {
-                int occ = count.get(i);
-                count.put(i, occ + 1);
-            } else {
-                count.put(i, 1);
-            }
+            count.put(i, count.getOrDefault(i, 0) + 1);
         }
         for (Map.Entry<Integer, Integer> map : count.entrySet()) {
             System.out.println(map.getKey() + " : " + map.getValue());

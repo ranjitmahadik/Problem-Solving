@@ -13,11 +13,11 @@ public class MinFallingPathSum {
     }
 
     public static void main(String[] args) {
-        int[][] grid = {{2, 1, 3}, {6, 5, 4}, {7, 8, 9}};
-        int ans = Integer.MAX_VALUE;
-        for (int i = 0; i < grid[0].length; i++) {
-            ans = Math.min(ans, minFallingPathSum(grid, 0, i));
-        }
-        System.out.println("ans = " + ans);
+//        int[][] grid = {{2, 1, 3}, {6, 5, 4}, {7, 8, 9}};
+//        int ans = Integer.MAX_VALUE;
+//        for (int i = 0; i < grid[0].length; i++) {
+//            ans = Math.min(ans, minFallingPathSum(grid, 0, i));
+//        }
+//        System.out.println("ans = " + ans);
     }
 }

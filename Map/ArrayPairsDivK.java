@@ -9,7 +9,7 @@ public class ArrayPairsDivK {
             ans[rem]++;
         }
         if (ans[0] % 2 != 0) return false;
-        for (int i = 1; i < (arr.length / 2); i++) {
+        for (int i = 1; i < K; i++) {
             if (ans[i] != ans[K - i]) {
                 return false;
             }

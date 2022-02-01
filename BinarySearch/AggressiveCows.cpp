@@ -28,5 +28,6 @@ int getAggressiveCows(vector<int>& arr,int cows){
 }
 
 int main(){
+    cout<<"Hello";
     return 0;
 }

@@ -1,5 +1,6 @@
 package DynamicProgramming.GridPattern;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class UniquePathsI {
@@ -40,6 +41,41 @@ public class UniquePathsI {
         dp = new int[m + 1][n + 1];
         for (int[] dpArr : dp) Arrays.fill(dpArr, -1);
         return dfs(m, n, 1, 1);
+    }
+
+    private static int uniquePathsBottomUp(int n, int m) {
+        int dp[][] = new int[n][m];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (i == 0 && j == 0) dp[i][j] = 1;
+                else {
+                    int up = 0, left = 0;
+                    if (i > 0) up = dp[i - 1][j];
+                    if (j > 0) left = dp[i][j - 1];
+                    dp[i][j] = up + left;
+                }
+            }
+        }
+        return dp[n - 1][m - 1];
+    }
+
+    private static int uniquePathsBottomUpOptimal(int n, int m) {
+        ArrayList<Integer> prev = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            ArrayList<Integer> curr = new ArrayList<>();
+            for (int j = 0; j < m; j++) {
+                if (i == 0 && j == 0) curr.add(j, 1);
+                else {
+                    int up = 0, left = 0;
+                    if(i > 0)   up = prev.get(j);
+                    if(j > 0)   left = curr.get(j-1);
+
+                    curr.add(j, up + left);
+                }
+            }
+            prev = curr;
+        }
+        return prev.get(m - 1);
     }
 
     public static void main(String[] args) {

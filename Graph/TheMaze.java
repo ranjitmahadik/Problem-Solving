@@ -2,8 +2,7 @@ package Graph;
 
 import util.Pair;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 //LC-490
 public class TheMaze {
@@ -43,15 +42,16 @@ public class TheMaze {
     }
 
     public static void main(String[] args) {
-        int[][] mat = {
-                {0, 0, 1, 0, 0},
-                {0, 0, 0, 0, 0},
-                {0, 0, 0, 1, 0},
-                {1, 1, 0, 1, 1},
-                {0, 0, 0, 0, 0}
-        };
-        Pair<Integer, Integer> start = new Pair<>(0, 4);
-        Pair<Integer, Integer> end = new Pair<>(3, 2);
-        System.out.println("hasPath(mat, start, end) = " + hasPath(mat, start, end));
+//        int[][] mat = {
+//                {0, 0, 1, 0, 0},
+//                {0, 0, 0, 0, 0},
+//                {0, 0, 0, 1, 0},
+//                {1, 1, 0, 1, 1},
+//                {0, 0, 0, 0, 0}
+//        };
+//        Pair<Integer, Integer> start = new Pair<>(0, 4);
+//        Pair<Integer, Integer> end = new Pair<>(3, 2);
+//        System.out.println("hasPath(mat, start, end) = " + hasPath(mat, start, end));
+
     }
 }

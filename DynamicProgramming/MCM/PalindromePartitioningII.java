@@ -25,11 +25,26 @@ public class PalindromePartitioningII {
         return ans;
     }
 
+    private static int minCutsForPalindrome(String s, int i, int j) {
+        if (i >= j) return 0;
+        else if (isPalin(s, i, j)) return 0;
+        int ans = Integer.MAX_VALUE - 1;
+        for (int k = i; k < j; k++) {
+            if (isPalin(s, i, k)) {
+                int temp = 1 + minCutsForPalindrome(s, k + 1, j);
+                ans = Math.min(temp, ans);
+            }
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
-        System.out.println("minCuts(\"cdd\", 0, 2) = " + minCuts("cdd", 0, 2));
+        System.out.println(minCutsForPalindrome("dgk", 0, 2) + 1);
+        System.out.println(minCutsForPalindrome("baaa", 0, 3) + 1);
+        System.out.println(minCutsForPalindrome("abbba", 0, 4) + 1);
     }
 }
 
 /**
- * "cdd"       0,2
+ * "c|dd"       0,2
  */
